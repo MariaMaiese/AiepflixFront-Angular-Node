@@ -1,0 +1,96 @@
+<div class="estilo-nav">
+    <app-header></app-header>
+    <div class="row-1 mt-5">
+        <div class="container col-5 card">
+            <form [formGroup]="registrarForm">
+                <div class="mt-3 mb-3">
+                    <div class="mb-3 texto card-title fs-5">Registro Usuario</div>
+                    <hr>
+                    <label for="exampleInputName1" class="form-label texto">Nombre</label>
+                    <div class="input-group">
+                        <div class="input-group-preppend">
+                            <span class="input-group-text grupo">
+                                <i class="bi bi-envelope" fill="currentColor"></i>
+                            </span>
+                        </div>
+                        <input formControlName="name" type="text" class="texto form-control" id="exampleInputName1"
+                            aria-describedby="namelHelp" placeholder="Ingresa tu nombre">
+                    </div>
+                    <span *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="texto text-danger">
+                        El campo name es requerido
+                    </span>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label texto">Correo</label>
+                    <div class="input-group">
+                        <div class="input-group-preppend">
+                            <span class="input-group-text">
+                                <i class="bi bi-envelope"></i>
+                            </span>
+                        </div>
+                        <input formControlName="email" type="email" class="texto form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Ingresa tu correo electrónico">
+                    </div>
+                    <span *ngIf="email?.invalid && (email?.dirty || email?.touched)&& email?.errors?.['required']"
+                        class="texto text-danger">
+                        El campo email es requerido
+                    </span>
+                    <span *ngIf="email?.invalid && (email?.dirty || email?.touched) && email?.errors?.['email']"
+                        class="texto text-danger">
+                        El formato del email es inválido
+                    </span>
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="texto form-label">Contraseña</label>
+                    <div class="input-group">
+                        <input formControlName="password" [type]=" showPassword ? 'text' : 'password' "
+                            class="texto form-control" placeholder="Ingresa tu contraseña">
+                        <div class="input-group-append">
+                            <span class="input-group-text">
+                                <i class="bi" [ngClass]="{'bi-eye-slash':!showPassword, 'bi-eye':showPassword}"
+                                    (click)="showHidePassword()"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <span *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="texto text-danger">
+                        El campo password es requerido
+                    </span>
+
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="texto form-label">Repetir Contraseña</label>
+                    <div class="input-group">
+                        <input formControlName="passwordrepeat" [type]=" showPassword ? 'text' : 'password' "
+                            class="texto form-control" placeholder="Repite tu contraseña">
+                        <div class="input-group-append">
+                            <span class="input-group-text">
+                                <i class="bi" [ngClass]="{'bi-eye-slash':!showPassword, 'bi-eye':showPassword}"
+                                    (click)="showHidePassword()"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <span *ngIf="passwordrepeat?.invalid && (passwordrepeat?.dirty || passwordrepeat?.touched)"
+                        class="texto text-danger">
+                        El campo password es requerido
+                    </span>
+
+                    <span *ngIf="passwordrepeat?.invalid && passwordrepeat?.errors?.['compare']"
+                        class="texto text-danger">
+                        <br>
+                        Las contraseñas no coinciden
+                    </span>
+                </div>
+                <div>
+                    <button [disabled]="registrarForm.invalid" (click)="submitForm()" type="submit"
+                        class="texto mb-3 btn btn-outline-uno texto">Registrarse</button>
+                    <div class="mb-3">
+                        <span *ngIf="error" class="texto text-danger">
+                            {{errorMsj}}
+                        </span>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>

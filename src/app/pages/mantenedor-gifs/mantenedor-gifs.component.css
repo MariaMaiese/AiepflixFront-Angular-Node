@@ -1,0 +1,25 @@
+.estilo-nav {
+    min-width: 80vw;
+}
+
+.texto {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-outline-uno {
+    background-color: #fca311;
+    color: #e5e5e5;
+    border-color: #e5e5e5;
+
+}
+
+.btn-outline-uno:hover {
+    background-color: #FDC05D;
+    color: #ffffff;
+
+}
+
+
+hr {
+    margin-top: 0;
+}

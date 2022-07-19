@@ -1,0 +1,33 @@
+<div class="estilo-nav">
+    <app-header></app-header>
+    <div class="row-1 mt-5">
+        <div class="container col-5 card">
+            <form [formGroup]="nuevoGifForm">
+                <div class="mt-3 mb-1">
+                    <div class="texto card-title fs-5">Crear Gif</div>
+                    <hr>
+                    <div class="mb-3">
+                        <label for="exampleInput1" class="texto form-label">Nombre</label>
+                        <input formControlName="name" type="text" class="texto form-control" id="exampleInputEmail1"
+                            aria-describedby="emailHelp" placeholder="Nombre del Gif">
+                        <span *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="texto text-danger">
+                            El campo nombre es requerido
+                        </span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="texto form-label">Url Gif</label>
+                        <input formControlName="imagen" type="text" class="texto form-control"
+                            aria-describedby="emailHelp" placeholder="Imagen del Gif">
+                        <span *ngIf="imagen?.invalid && (imagen?.dirty || imagen?.touched)" class="texto text-danger">
+                            El campo Url es requerido
+                        </span>
+                    </div>
+                    <div>
+                        <button [disabled]="nuevoGifForm.invalid" (click)="submitForm()" type="submit"
+                            class="mb-3 btn btn-outline-uno texto">Guardar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

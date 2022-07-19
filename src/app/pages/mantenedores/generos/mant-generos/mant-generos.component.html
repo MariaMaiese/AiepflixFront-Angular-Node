@@ -1,0 +1,54 @@
+<div class="estilo-nav">
+    <app-header></app-header>
+    <div class="row-1 mt-5">
+
+        <div class="container col-5 card">
+            <div class="row">
+                <div class="col-5 texto mt-3 card-title fs-5">
+                    Géneros
+                </div>
+                <div class="col-7 texto mt-3 card-title d-flex ">
+                    <a routerLink="/mantenedor-generos/nuevo" class="btn btn-primary ms-auto">
+                        Agregar
+                        <i class="bi bi-plus-lg"></i>
+                    </a>
+                </div>
+            </div>
+
+
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th>
+                            Nombre
+                        </th>
+                        <th>
+                            Acciones
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let genero of generos" class="row-1">
+                        <td class="col-6">
+                            {{genero.name}}
+                        </td>
+                        <td class="row">
+                            <div class="col-6">
+                                <a routerLink="/mantenedor-generos/editar" [queryParams]="{id:genero._id}"
+                                    class="btn btn-warning">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <button (click)="deleteGenero(genero)" class="btn btn-danger">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

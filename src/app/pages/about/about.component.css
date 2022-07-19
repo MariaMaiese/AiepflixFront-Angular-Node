@@ -1,0 +1,37 @@
+.div-content {
+    max-height: 100vh;
+    min-height: 100vh;
+    min-width: 80vw;
+    overflow: scroll;
+}
+
+.spinner-grow {
+    color: #000000;
+}
+
+.texto {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.btn-outline-secondary-uno {
+
+    background-color: #fca311;
+    color: #e5e5e5;
+    border-color: #e5e5e5;
+
+}
+
+.btn-outline-secondary-uno:hover {
+    background-color: #FDC05D;
+    color: #ffffff;
+
+}
+
+.btn-outline-secondary:hover {
+    background-color: #e5e5e5;
+    border-color: #CCCCCC;
+}
+
+.estilo-nav {
+    min-width: 80vw;
+}

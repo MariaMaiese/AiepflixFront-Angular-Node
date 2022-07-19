@@ -1,0 +1,41 @@
+<div class="estilo-nav">
+    <app-header></app-header>
+    <div class="row-1 mt-5">
+        <div class="container col-5 card">
+            <form [formGroup]="nuevaPeliculaForm">
+                <div class="mt-3 mb-1">
+                    <div class="texto card-title fs-5">Crear Película</div>
+                    <hr>
+                    <div class="mb-3">
+                        <label for="exampleInput1" class="texto form-label">Nombre</label>
+                        <input formControlName="name" type="text" class="texto form-control" id="exampleInput1"
+                            aria-describedby="emailHelp" placeholder="Nombre de la pelicula">
+                        <span *ngIf="name?.invalid && (name?.dirty || name?.touched)" class="texto text-danger">
+                            El campo nombre es requerido
+                        </span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="texto form-label">Poster</label>
+                        <input formControlName="poster" type="text" class="texto form-control"
+                            aria-describedby="emailHelp" placeholder="Poster de la pelicula">
+                        <span *ngIf="poster?.invalid && (poster?.dirty || poster?.touched)" class="texto text-danger">
+                            El poster es requerido
+                        </span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInput2" class="texto form-label">Año</label>
+                        <input formControlName="year" type="text" class="texto form-control" id="exampleInput2"
+                            aria-describedby="emailHelp" placeholder="Nombre del Gif">
+                        <span *ngIf="year?.invalid && (year?.dirty || year?.touched)" class="texto text-danger">
+                            El campo year es requerido
+                        </span>
+                    </div>
+                    <div>
+                        <button [disabled]="nuevaPeliculaForm.invalid" (click)="submitForm()" type="submit"
+                            class="mb-3 btn btn-outline-uno texto">Guardar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

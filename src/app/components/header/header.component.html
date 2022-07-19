@@ -1,0 +1,19 @@
+<nav class="div-menu navbar navbar-light">
+    <div class="row div-menu container-fluid d-flex">
+        <div class="col-8">
+            <span *ngIf="usuarioLogueado" class="navbar-text nav-principal">
+                <a class=" title texto pe-3">{{nombreUsuario}} : {{rolUsuario}}</a>
+            </span>
+        </div>
+        <div class="col-4 d-flex">
+            <span *ngIf="!usuarioLogueado" class="navbar-text nav-principal">
+                <a class="title texto pe-3" routerLink="/login">Ingresar</a>
+
+                <a class=" title texto" routerLink="/registrar">Registrarse</a>
+            </span>
+            <span *ngIf="usuarioLogueado" class="navbar-text nav-principal">
+                <a class=" title texto" routerLink="" (click)="logout()">Salir</a>
+            </span>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,20 @@
+.nav-principal {
+    margin-left: auto;
+}
+
+.title {
+    color: #fca311 !important;
+    text-decoration: none;
+}
+
+.texto {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.div-menu {
+    background-color: #14213d;
+}
+
+.infovariable {
+    align-items: flex-end;
+}

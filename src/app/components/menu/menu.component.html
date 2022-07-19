@@ -1,0 +1,27 @@
+<div class=" div-menu d-flex flex-column flex-shrink-0 p-3 text-white ">
+    <div href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto title text-decoration-none">
+        <span class="fs-3 texto">Menu</span>
+    </div>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+        <li *ngFor="let item of userService.menuItems" class="nav-item">
+            <a routerLink="{{item.url}}" routerLinkActive="active" class="nav-link text-white texto"
+                aria-current="page">
+                <i class="bi {{item.icon}}"></i>
+                {{item.text}}
+            </a>
+
+        </li>
+    </ul>
+    <hr>
+    <div class="dropdown">
+        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/MariaMaiese.png" alt="" width="32" height="32" class="rounded-circle me-2">
+            <strong class="texto">Daniela Maiese</strong>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+            <li><a href="https://github.com/MariaMaiese" target="_blank" class="dropdown-item texto">Github</a></li>
+        </ul>
+    </div>
+</div>
